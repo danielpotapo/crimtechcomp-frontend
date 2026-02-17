@@ -109,8 +109,23 @@ export default function ReadPage() {
       restoreRef.current = false;
       return;
     }
+
     loadArticles();
-  }, [loadArticles]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+
+  // load following batches of articles (upon filter/search changes)
+  useEffect(() => {
+    if (restoreRef.current) {
+      restoreRef.current = false;
+      return;
+    }
+
+    loadArticles();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filter, debouncedQuery]);
+
 
   // start observing the sentinel (updates cursor every article load)
   useEffect(() => {
