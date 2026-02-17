@@ -1,29 +1,87 @@
+.navbar {
+  display: flex;
+  background-color: #a50a0e;
+  align-items: center;
+  height: 55px;
+}
+
+.nav-logo {
+  color: white;
+  font-family: 'Big Moore';
+  letter-spacing: 0.01em;
+  font-size: 30px;
+  padding: 15px;
+}
+
+.nav-align-bar {
+  margin-left: auto;
+  
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-link {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #a50a0e;
+  color: white;
+  font-weight: 500;
+  height: 55px;
+  width: 100%;
+  padding: 0px 20px;
+  border: none;
+  outline: none;
+}
+
+.nav-link-active {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #a9363a;
+  color: white;
+  font-weight: 500;
+  height: 55px;
+  width: 100%;
+  padding: 0px 20px;
+  border: none;
+  outline: none;
+}
+
+
+
 .read-page {
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
+  font-family: Georgia, serif;
 }
 
 .read-header {
+  color: hsl(358, 89%, 34%);
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .read-header h1 {
-  font-size: 2rem;
+  font-size: 57px;
+  font-family: 'Big Moore';
   margin-bottom: 1rem;
 }
 
 .read-content {
-  /* Add your styles here */
+  font-size: 1rem;
 }
 
 .articles-list {
+  padding: 2rem 0rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
 .article-card {
+  background-color: #ffffff;
   padding: 1.5rem;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
@@ -34,17 +92,34 @@
   margin-bottom: 0.5rem;
 }
 
+.article-content {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #2f2e2e;
+}
+
 .article-dek {
   font-size: 1.1rem;
-  color: #666;
+  color: #667;
   margin-bottom: 1rem;
 }
 
 .article-meta {
   font-size: 0.9rem;
-  color: #888;
   display: flex;
-  gap: 0.5rem;
+}
+
+.article-author {
+  color: #ba0600;
+}
+
+.article-reading-time {
+  color: #870400
+}
+
+.article-spacer {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .loading-state,
@@ -54,6 +129,16 @@
 .end-state {
   text-align: center;
   padding: 2rem;
+}
+
+.search-input {
+  border: 2px solid #e0e0e0;
+  width: 600px;
+  height: 35px;
+  border-radius: 5px;
+  padding: 0px 8px;
+  font-family: Georgia, serif;
+
 }
 
 .error-state button {

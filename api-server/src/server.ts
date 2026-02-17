@@ -20,6 +20,7 @@ app.get('/api/articles', async (req, res) => {
     const cursor = req.query.cursor as string | null | undefined;
     const limit = parseInt(req.query.limit as string) || 10;
     const query = (req.query.q as string) || null;
+    const filter = (req.query.f as string) || null;
 
     const allArticles = generateMockArticles();
     
@@ -28,6 +29,14 @@ app.get('/api/articles', async (req, res) => {
     if (query) {
       const searchLower = query.toLowerCase();
       filteredArticles = allArticles.filter(article => 
+        article.title.toLowerCase().includes(searchLower) ||
+        article.dek.toLowerCase().includes(searchLower) ||
+        article.author.toLowerCase().includes(searchLower)
+      );
+    }
+    if (filter) {
+      const searchLower = filter.toLowerCase();
+      filteredArticles = filteredArticles.filter(article => 
         article.title.toLowerCase().includes(searchLower) ||
         article.dek.toLowerCase().includes(searchLower) ||
         article.author.toLowerCase().includes(searchLower)

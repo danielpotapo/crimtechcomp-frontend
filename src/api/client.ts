@@ -15,12 +15,13 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001
  * Fetches a paginated list of articles
  */
 export async function fetchArticles(params: ArticlesListParams = {}): Promise<ArticlesListResponse> {
-  const { cursor = null, limit = 10, q = null } = params;
+  const { cursor = null, limit = 10, q = null, f=null} = params;
   
   const searchParams = new URLSearchParams();
   if (cursor) searchParams.set('cursor', cursor);
   if (limit) searchParams.set('limit', limit.toString());
   if (q) searchParams.set('q', q);
+  if (f) searchParams.set('f', f);
   
   const url = `${API_BASE_URL}/articles?${searchParams.toString()}`;
   

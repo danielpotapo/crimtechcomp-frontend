@@ -31,4 +31,5 @@ export interface ArticlesListParams {
   cursor?: string | null;
   limit?: number;
   q?: string | null;
+  f?: string | null;
 }
