@@ -60,8 +60,7 @@ export default function ReadPage() {
     setSearchQuery(parsed.searchQuery ?? '');
     setArticles(parsed.articles ?? []);
     setDebouncedQuery(parsed.debouncedQuery ?? '');
-    setNextCursor(parsed.nextCursor ?? null);
-    setHasMore(parsed.hasMore ?? true);
+    setActive(parsed.active ?? '');
 
     if ((parsed.articles?.length ?? 0) > 0) {
       setLoading(false);
@@ -80,11 +79,12 @@ export default function ReadPage() {
       debouncedQuery,
       nextCursor,
       hasMore,
+      active,
       scrollY: window.scrollY
     }
     sessionStorage.setItem(STORAGE_KEY, JSON.stringify(data));
 
-  }, [searchQuery, articles, debouncedQuery, nextCursor, hasMore]);
+  }, [active, searchQuery, articles, debouncedQuery, nextCursor, hasMore]);
 
   // update scroll session storage every time the user loads
   useEffect(() => {
